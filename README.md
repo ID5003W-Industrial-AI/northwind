@@ -54,6 +54,8 @@ If you need to upload any files into your db container, just copy and paste them
 * Go to [http://localhost:7474](http://localhost:7474/)
     - No Login Credentials required.
     - Connect to the Database.
-    - On the top query field, type `:play northwind graph` and execute the cell.
-    - Execute the interactive Prompts, thus loading the Northwind Dataset.
+    - Quit the browser session.
+    - On a terminal session execute: `docker restart neo4j` and wait 5-10s.
+    - Execute: `docker exec -it neo4j /bin/bash /docker-entrypoint-initdb/init.sh`
+    - Launch the browser interactive session to verify whether graphs have populated or not.
 * [Neo4J Official Documentation - Northwind](https://neo4j.com/docs/getting-started/appendix/tutorials/guide-import-relational-and-etl/)
