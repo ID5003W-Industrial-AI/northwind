@@ -11,21 +11,14 @@ _The MongoDB Northwind database is created from
 [MyWind](https://github.com/dalers/mywind); a MySQL version of Northwind._
 
 Installation
+
+Everything should be done automatically. In case anything fails:
 ---
 
     docker exec -it mongo_db /bin/bash
     git clone https://github.com/ID5003W-Industrial-AI/northwind
     cd northwind/mongodb-northwind
-    ./mongo-import.sh northwind
-
-Differences between original and MongoDB Northwind
----
-
-* Primary key field is `_id` for all collections.
-* `order_details` are embedded as `details` field in the `orders` collection.
-* `purchase_order_details` are embedded as `details` field in the `purchase_order` collection.
-* `employee_privileges` is replaced with a list of privilege ids in the `employee` collection.
-* `products.supplier_ids` is a list of ids (`int`) rather than a comma separated string.
+    ./mongo-import.sh
 
 Verify Database
 ---
