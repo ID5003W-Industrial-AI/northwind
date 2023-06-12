@@ -74,11 +74,14 @@ services:
           - "7687:7687"
         environment:
             NEO4J_AUTH: none
+            NEO4J_dbms_security_allow__csv__import__from__file__urls: true
         volumes:
             - ./data/neo4j/data:/data:Z
             - ./data/neo4j/logs:/logs:Z
             - ./data/neo4j/import:/var/lib/neo4j/import:Z
-            - ./data/neo4j/plogins:/plugins:Z
+            - ./data/neo4j/plugins:/plugins:Z
+            - ./neo4j-northwind/init.sh:/docker-entrypoint-initdb/init.sh
+            - ./neo4j-northwind:/neo4j-northwind
             - ./files:/files
 
 volumes:
